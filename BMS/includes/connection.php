@@ -1,7 +1,7 @@
 <?php
+$link = mysqli_connect("localhost", "root", "", "bookstore");
 
-	$link = mysql_connect("localhost","root","");
-
-	mysql_select_db("bms",$link);
-
+if (!$link) {
+    die("Connection failed: " . mysqli_connect_error());
+}
 ?>

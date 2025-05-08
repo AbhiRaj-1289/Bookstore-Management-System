@@ -2,6 +2,19 @@
 	include("includes/header.php");
 ?>
 
+<?php
+if (isset($_SESSION['success'])) {
+    echo '<p style="color:green; text-align:center;">' . $_SESSION['success'] . '</p>';
+    unset($_SESSION['success']);
+}
+
+if (!empty($_SESSION['error']['db'])) {
+    echo '<p style="color:red; text-align:center;">' . $_SESSION['error']['db'] . '</p>';
+    unset($_SESSION['error']['db']);
+}
+?>
+
+
 <div id="content">
 	<div class="post">
 		<h2 class="title"><a href="#">Contact Us</a></h2>
